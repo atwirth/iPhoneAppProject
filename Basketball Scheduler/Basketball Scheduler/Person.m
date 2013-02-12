@@ -10,4 +10,16 @@
 
 @implementation Person
 
+-(id)initWithID:(NSInteger *)ID name:(NSString *)name
+{
+    self = [super init];
+    if (self) {
+        _ID = ID;
+        _name = name;
+        return self;
+    }
+    return nil;
+
+}
+
 @end

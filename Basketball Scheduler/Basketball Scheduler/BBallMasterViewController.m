@@ -7,13 +7,13 @@
 //
 
 #import "BBallMasterViewController.h"
-
 #import "BBallDetailViewController.h"
+#import "Person.h"
 
 
 
 @interface BBallMasterViewController () {
-    NSMutableArray *_objects;
+    NSMutableArray *people;
 }
 @end
 
@@ -32,6 +32,11 @@
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(fetchEntries)];
     self.navigationItem.rightBarButtonItem = addButton;
+    
+    int n = people.count;
+    Person *first = [[Person alloc] initWithID:&n name:@"Andrew"];
+    
+    people = [[NSMutableArray alloc] initWithObjects:first, nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -42,10 +47,10 @@
 
 - (void)insertNewObject:(id)sender
 {
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
+    if (!people) {
+        people = [[NSMutableArray alloc] init];
     }
-    [_objects insertObject:[NSDate date] atIndex:0];
+    [people insertObject:[NSDate date] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
@@ -59,15 +64,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return people.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-
-    NSDate *object = _objects[indexPath.row];
-    cell.textLabel.text = [object description];
+    static NSString *CellIdentifier = @"playerCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    
+    Person *player = [people objectAtIndex:indexPath.row];
+    [[cell textLabel] setText:player.name];
     return cell;
 }
 
@@ -106,11 +113,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = _objects[indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    }
+    if ([[segue identifier] isEqualToString:@"showPlayerDetails"]) {
+            }
 }
 
 - (void)fetchEntries
@@ -128,9 +132,19 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)conn
 {
+    
     NSString *xmlCheck = [[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding];
     NSLog(@"xmlCheck = %@", xmlCheck);
+     /*
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:xmlData];
+    [parser setDelegate:self];
+    [parser parse];
+    xmlData = nil;
+    connection = nil;
+    [[self tableView] reloadData];
+      */
 }
+     
 
 -(void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error
 {

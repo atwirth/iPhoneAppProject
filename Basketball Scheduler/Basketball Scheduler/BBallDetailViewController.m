@@ -2,37 +2,48 @@
 //  BBallDetailViewController.m
 //  Basketball Scheduler
 //
-//  Created by Maxwell Stanford on 2/10/13.
+//  Created by Andrew Wirth on 2/12/13.
 //  Copyright (c) 2013 Andrew Wirth. All rights reserved.
 //
 
 #import "BBallDetailViewController.h"
+#import "Person.h"
 
-@interface BBallDetailViewController ()
+
+@interface BirdsDetailViewController ()
 - (void)configureView;
 @end
 
-@implementation BBallDetailViewController
+@implementation BirdsDetailViewController
 
 #pragma mark - Managing the detail item
 
-- (void)setDetailItem:(id)newDetailItem
+
+- (void)setPlayer:(Person *) newPlayer
 {
-    if (_detailItem != newDetailItem) {
-        _detailItem = newDetailItem;
+    if (_player != newPlayer) {
+        _player = newPlayer;
         
         // Update the view.
         [self configureView];
     }
-    
 }
 
 - (void)configureView
 {
     // Update the user interface for the detail item.
-
-    if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+    Person *thePlayer = self.player;
+    
+    if (thePlayer) {
+        NSString *newID = [@"%d", thePlayer.ID];
+        self.IDLabel.text = newID;
+        self.nameLabel.text = thePlayer.name;
+        self.cellLabel.text = thePlayer.cell;
+        self.homeLabel.text = thePlayer.home;
+        self.emailLabel.text = thePlayer.email;
+        self.activeLabel.text = thePlayer.active;
+        self.getTextsLabel.text = thePlayer.getTexts;
+        self.playingNextLabel.text = thePlayer.playingNext;
     }
 }
 

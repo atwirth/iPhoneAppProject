@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C82D8F1116CAB9B000216400 /* BBallDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */; };
 		CF29417616C81E8F00E43403 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF29417516C81E8F00E43403 /* UIKit.framework */; };
 		CF29417816C81E8F00E43403 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF29417716C81E8F00E43403 /* Foundation.framework */; };
 		CF29417A16C81E8F00E43403 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF29417916C81E8F00E43403 /* CoreGraphics.framework */; };
@@ -16,13 +17,13 @@
 		CF29418816C81E8F00E43403 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = CF29418716C81E8F00E43403 /* Default.png */; };
 		CF29418A16C81E8F00E43403 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF29418916C81E8F00E43403 /* Default@2x.png */; };
 		CF29418C16C81E8F00E43403 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = CF29418B16C81E8F00E43403 /* Default-568h@2x.png */; };
-		CF29418F16C81E8F00E43403 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF29418D16C81E8F00E43403 /* MainStoryboard.storyboard */; };
 		CF29419216C81E8F00E43403 /* BBallMasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF29419116C81E8F00E43403 /* BBallMasterViewController.m */; };
-		CF29419516C81E8F00E43403 /* BBallDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CF29419416C81E8F00E43403 /* BBallDetailViewController.m */; };
 		CF29419D16C821ED00E43403 /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = CF29419C16C821ED00E43403 /* Person.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C82D8F0F16CAB9B000216400 /* BBallDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallDetailViewController.h; sourceTree = "<group>"; };
+		C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallDetailViewController.m; sourceTree = "<group>"; };
 		CF29417216C81E8F00E43403 /* Basketball Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basketball Scheduler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF29417516C81E8F00E43403 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF29417716C81E8F00E43403 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -36,11 +37,8 @@
 		CF29418716C81E8F00E43403 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		CF29418916C81E8F00E43403 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CF29418B16C81E8F00E43403 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		CF29418E16C81E8F00E43403 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		CF29419016C81E8F00E43403 /* BBallMasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBallMasterViewController.h; sourceTree = "<group>"; };
 		CF29419116C81E8F00E43403 /* BBallMasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBallMasterViewController.m; sourceTree = "<group>"; };
-		CF29419316C81E8F00E43403 /* BBallDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BBallDetailViewController.h; sourceTree = "<group>"; };
-		CF29419416C81E8F00E43403 /* BBallDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BBallDetailViewController.m; sourceTree = "<group>"; };
 		CF29419B16C821ED00E43403 /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		CF29419C16C821ED00E43403 /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -89,15 +87,14 @@
 		CF29417B16C81E8F00E43403 /* Basketball Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				C82D8F0F16CAB9B000216400 /* BBallDetailViewController.h */,
+				C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */,
 				CF29418416C81E8F00E43403 /* BBallAppDelegate.h */,
 				CF29418516C81E8F00E43403 /* BBallAppDelegate.m */,
-				CF29418D16C81E8F00E43403 /* MainStoryboard.storyboard */,
 				CF29419016C81E8F00E43403 /* BBallMasterViewController.h */,
 				CF29419116C81E8F00E43403 /* BBallMasterViewController.m */,
 				CF29419B16C821ED00E43403 /* Person.h */,
 				CF29419C16C821ED00E43403 /* Person.m */,
-				CF29419316C81E8F00E43403 /* BBallDetailViewController.h */,
-				CF29419416C81E8F00E43403 /* BBallDetailViewController.m */,
 				CF29417C16C81E8F00E43403 /* Supporting Files */,
 			);
 			path = "Basketball Scheduler";
@@ -173,7 +170,6 @@
 				CF29418816C81E8F00E43403 /* Default.png in Resources */,
 				CF29418A16C81E8F00E43403 /* Default@2x.png in Resources */,
 				CF29418C16C81E8F00E43403 /* Default-568h@2x.png in Resources */,
-				CF29418F16C81E8F00E43403 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,8 +183,8 @@
 				CF29418216C81E8F00E43403 /* main.m in Sources */,
 				CF29418616C81E8F00E43403 /* BBallAppDelegate.m in Sources */,
 				CF29419216C81E8F00E43403 /* BBallMasterViewController.m in Sources */,
-				CF29419516C81E8F00E43403 /* BBallDetailViewController.m in Sources */,
 				CF29419D16C821ED00E43403 /* Person.m in Sources */,
+				C82D8F1116CAB9B000216400 /* BBallDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -201,14 +197,6 @@
 				CF29417F16C81E8F00E43403 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		CF29418D16C81E8F00E43403 /* MainStoryboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				CF29418E16C81E8F00E43403 /* en */,
-			);
-			name = MainStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -276,6 +264,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Basketball Scheduler/Basketball Scheduler-Prefix.pch";
 				INFOPLIST_FILE = "Basketball Scheduler/Basketball Scheduler-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -287,6 +276,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Basketball Scheduler/Basketball Scheduler-Prefix.pch";
 				INFOPLIST_FILE = "Basketball Scheduler/Basketball Scheduler-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -311,6 +301,7 @@
 				CF29419A16C81E8F00E43403 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
