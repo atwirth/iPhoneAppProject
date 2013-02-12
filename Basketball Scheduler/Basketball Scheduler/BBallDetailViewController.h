@@ -10,7 +10,7 @@
 
 @class Person;
 
-@interface BirdsDetailViewController : UITableViewController
+@interface BBallDetailViewController : UITableViewController
 
 @property (strong, nonatomic) Person *player;
 @property (weak, nonatomic) IBOutlet UILabel *IDLabel;

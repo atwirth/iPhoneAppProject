@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C82D8F1116CAB9B000216400 /* BBallDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */; };
+		C8D95CE416CACE4B00DFCA65 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8D95CE216CACE4B00DFCA65 /* MainStoryboard.storyboard */; };
 		CF29417616C81E8F00E43403 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF29417516C81E8F00E43403 /* UIKit.framework */; };
 		CF29417816C81E8F00E43403 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF29417716C81E8F00E43403 /* Foundation.framework */; };
 		CF29417A16C81E8F00E43403 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF29417916C81E8F00E43403 /* CoreGraphics.framework */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		C82D8F0F16CAB9B000216400 /* BBallDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallDetailViewController.h; sourceTree = "<group>"; };
 		C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallDetailViewController.m; sourceTree = "<group>"; };
+		C8D95CE316CACE4B00DFCA65 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		CF29417216C81E8F00E43403 /* Basketball Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basketball Scheduler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF29417516C81E8F00E43403 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF29417716C81E8F00E43403 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -93,6 +95,7 @@
 				CF29418516C81E8F00E43403 /* BBallAppDelegate.m */,
 				CF29419016C81E8F00E43403 /* BBallMasterViewController.h */,
 				CF29419116C81E8F00E43403 /* BBallMasterViewController.m */,
+				C8D95CE216CACE4B00DFCA65 /* MainStoryboard.storyboard */,
 				CF29419B16C821ED00E43403 /* Person.h */,
 				CF29419C16C821ED00E43403 /* Person.m */,
 				CF29417C16C81E8F00E43403 /* Supporting Files */,
@@ -170,6 +173,7 @@
 				CF29418816C81E8F00E43403 /* Default.png in Resources */,
 				CF29418A16C81E8F00E43403 /* Default@2x.png in Resources */,
 				CF29418C16C81E8F00E43403 /* Default-568h@2x.png in Resources */,
+				C8D95CE416CACE4B00DFCA65 /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +195,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		C8D95CE216CACE4B00DFCA65 /* MainStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C8D95CE316CACE4B00DFCA65 /* en */,
+			);
+			name = MainStoryboard.storyboard;
+			sourceTree = "<group>";
+		};
 		CF29417E16C81E8F00E43403 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (

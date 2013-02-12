@@ -10,11 +10,11 @@
 #import "Person.h"
 
 
-@interface BirdsDetailViewController ()
+@interface BBallDetailViewController ()
 - (void)configureView;
 @end
 
-@implementation BirdsDetailViewController
+@implementation BBallDetailViewController
 
 #pragma mark - Managing the detail item
 
@@ -35,8 +35,8 @@
     Person *thePlayer = self.player;
     
     if (thePlayer) {
-        NSString *newID = [@"%d", thePlayer.ID];
-        self.IDLabel.text = newID;
+        
+        self.IDLabel.text = thePlayer.ID;
         self.nameLabel.text = thePlayer.name;
         self.cellLabel.text = thePlayer.cell;
         self.homeLabel.text = thePlayer.home;

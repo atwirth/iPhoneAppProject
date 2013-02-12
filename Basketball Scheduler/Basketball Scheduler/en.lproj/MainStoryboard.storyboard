@@ -47,7 +47,7 @@
                                 </view>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <segue destination="irP-1c-qCm" kind="push" identifier="ShowPlayerDetails" id="TN7-QK-eLO"/>
+                                    <segue destination="irP-1c-qCm" kind="push" identifier="showPlayerDetails" id="TN7-QK-eLO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -249,6 +249,16 @@
                     <navigationItem key="navigationItem" title="Player Details" id="IXm-u4-6i7"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="IDLabel" destination="smY-2D-Nu7" id="26o-50-jzK"/>
+                        <outlet property="activeLabel" destination="n4s-SA-fwj" id="xzn-LC-8kn"/>
+                        <outlet property="cellLabel" destination="KJF-0l-6Ov" id="hXn-Zt-mxE"/>
+                        <outlet property="emailLabel" destination="Ub9-kk-cHi" id="wKA-SG-4jm"/>
+                        <outlet property="getTextsLabel" destination="mML-Lh-JCG" id="k1J-Br-2zg"/>
+                        <outlet property="homeLabel" destination="vlx-oI-U4B" id="ge7-AE-myI"/>
+                        <outlet property="nameLabel" destination="p9q-8d-wZE" id="deB-QY-U1Q"/>
+                        <outlet property="playingNextLabel" destination="7NW-2e-hca" id="ENL-SC-6cN"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="naq-Vk-cb7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

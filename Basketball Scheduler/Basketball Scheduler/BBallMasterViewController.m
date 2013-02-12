@@ -33,8 +33,9 @@
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(fetchEntries)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    int n = people.count;
-    Person *first = [[Person alloc] initWithID:&n name:@"Andrew"];
+    Person *first = [[Person alloc] initWithID:@"Boss" name:@"Andrew" cell:@"319-215-6308" home:@"319-266-1270" email:@"atwirth@coe.edu" active:@"no" getTexts:@"no" playingNext:@"no"];
+    
+    
     
     people = [[NSMutableArray alloc] initWithObjects:first, nil];
 }
@@ -113,8 +114,15 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showPlayerDetails"]) {
-            }
+    if ([[segue identifier] isEqualToString:@"showPlayerDetails"])
+    {
+        BBallDetailViewController *detailViewController = [segue destinationViewController];
+        
+        
+        
+        detailViewController.player = [people objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
+        
 }
 
 - (void)fetchEntries
