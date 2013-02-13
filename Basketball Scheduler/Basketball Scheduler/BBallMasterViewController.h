@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BBallMasterViewController : UITableViewController
+@class People;
+
+@interface BBallMasterViewController : UITableViewController <NSXMLParserDelegate>
 {
     NSURLConnection *connection;
     NSMutableData *xmlData;
+    
+    People *people;
 }
 - (void)fetchEntries;
 

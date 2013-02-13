@@ -24,7 +24,7 @@
 @property (weak, nonatomic) NSString *getTexts;
 @property (weak, nonatomic) NSString *playingNext;
 
--(id)initWithID:(NSString *)ID name:(NSString *)name cell:(NSString *)cell home:(NSString *)home email:(NSString *)email active:(NSString *)active getTexts:(NSString *)getTexts playingNext:(NSString *)playingNext;
+//-(id)initWithID:(NSString *)ID name:(NSString *)name cell:(NSString *)cell home:(NSString *)home email:(NSString *)email active:(NSString *)active getTexts:(NSString *)getTexts playingNext:(NSString *)playingNext;
 -(void)setCell:(NSString *)cell;
 -(void)setHome:(NSString *)home;
 -(void)setEmail:(NSString *)email;

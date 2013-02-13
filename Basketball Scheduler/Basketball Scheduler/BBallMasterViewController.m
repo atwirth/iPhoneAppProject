@@ -9,14 +9,13 @@
 #import "BBallMasterViewController.h"
 #import "BBallDetailViewController.h"
 #import "Person.h"
+#import "People.h"
 
 
 
-@interface BBallMasterViewController () {
-    NSMutableArray *people;
-}
+@interface BBallMasterViewController () 
+
 @end
-
 @implementation BBallMasterViewController
 
 - (void)awakeFromNib
@@ -27,17 +26,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self fetchEntries];
 	// Do any additional setup after loading the view, typically from a nib.
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
+    /*
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(fetchEntries)];
     self.navigationItem.rightBarButtonItem = addButton;
     
-    Person *first = [[Person alloc] initWithID:@"Boss" name:@"Andrew" cell:@"319-215-6308" home:@"319-266-1270" email:@"atwirth@coe.edu" active:@"no" getTexts:@"no" playingNext:@"no"];
+    People *first = [[Person alloc] initWithID:@"Boss" name:@"Andrew" cell:@"319-215-6308" home:@"319-266-1270" email:@"atwirth@coe.edu" active:@"no" getTexts:@"no" playingNext:@"no"];
     
     
     
     people = [[NSMutableArray alloc] initWithObjects:first, nil];
+     */
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,12 +50,14 @@
 
 - (void)insertNewObject:(id)sender
 {
+    /*
     if (!people) {
         people = [[NSMutableArray alloc] init];
     }
     [people insertObject:[NSDate date] atIndex:0];
     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+     */
 }
 
 #pragma mark - Table View
@@ -65,8 +69,10 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return people.count;
+    return [[people items] count];
+    //return people.count;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -74,8 +80,15 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     
-    Person *player = [people objectAtIndex:indexPath.row];
-    [[cell textLabel] setText:player.name];
+    //Person *player = [people objectAtIndex:indexPath.row];
+    //[[cell textLabel] setText:player.name];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+    }
+    Person *item = [[people items] objectAtIndex:[indexPath row]];
+    [[cell textLabel] setText:item.name];
+    
     return cell;
 }
 
@@ -83,6 +96,16 @@
 {
     // Return NO if you do not want the specified item to be editable.
     return YES;
+}
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
+{
+    NSLog(@"%@ found a %@ element", self, elementName);
+    if([elementName isEqual:@"people"]) {
+        people = [[People alloc] init];
+        [people setParentParserDelegate:self];
+        [parser setDelegate:people];
+    }
 }
 /*
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
@@ -117,10 +140,9 @@
     if ([[segue identifier] isEqualToString:@"showPlayerDetails"])
     {
         BBallDetailViewController *detailViewController = [segue destinationViewController];
+             
         
-        
-        
-        detailViewController.player = [people objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        detailViewController.player = [[people items] objectAtIndex:[self.tableView indexPathForSelectedRow].row];
     }
         
 }
@@ -143,14 +165,15 @@
     
     NSString *xmlCheck = [[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding];
     NSLog(@"xmlCheck = %@", xmlCheck);
-     /*
+     
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:xmlData];
     [parser setDelegate:self];
     [parser parse];
     xmlData = nil;
     connection = nil;
     [[self tableView] reloadData];
-      */
+    NSLog(@"%@\n", people);
+      
 }
      
 
