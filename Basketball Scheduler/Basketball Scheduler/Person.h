@@ -11,6 +11,7 @@
 @interface Person : NSObject <NSXMLParserDelegate>
 {
     NSMutableString *currentString;
+    NSString *element;
 }
 
 @property (nonatomic, weak) id parentParserDelegate;
@@ -25,12 +26,7 @@
 @property (weak, nonatomic) NSString *playingNext;
 
 //-(id)initWithID:(NSString *)ID name:(NSString *)name cell:(NSString *)cell home:(NSString *)home email:(NSString *)email active:(NSString *)active getTexts:(NSString *)getTexts playingNext:(NSString *)playingNext;
--(void)setCell:(NSString *)cell;
--(void)setHome:(NSString *)home;
--(void)setEmail:(NSString *)email;
--(void)setActive:(NSString *)active;
--(void)setGetTexts:(NSString *)getTexts;
--(void)setPlayingNext:(NSString *)playingNext;
+
 
 
 @end

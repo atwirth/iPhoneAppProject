@@ -13,7 +13,7 @@
 
 
 
-@interface BBallMasterViewController () 
+@interface BBallMasterViewController ()
 
 @end
 @implementation BBallMasterViewController
@@ -28,17 +28,13 @@
     [super viewDidLoad];
     
     [self fetchEntries];
-	// Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
     //self.navigationItem.leftBarButtonItem = self.editButtonItem;
     /*
-    UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(fetchEntries)];
-    self.navigationItem.rightBarButtonItem = addButton;
-    
-    People *first = [[Person alloc] initWithID:@"Boss" name:@"Andrew" cell:@"319-215-6308" home:@"319-266-1270" email:@"atwirth@coe.edu" active:@"no" getTexts:@"no" playingNext:@"no"];
-    
-    
-    
-    people = [[NSMutableArray alloc] initWithObjects:first, nil];
+     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(fetchEntries)];
+     self.navigationItem.rightBarButtonItem = addButton;
+     People *first = [[Person alloc] initWithID:@"Boss" name:@"Andrew" cell:@"319-215-6308" home:@"319-266-1270" email:@"atwirth@coe.edu" active:@"no" getTexts:@"no" playingNext:@"no"];
+     people = [[NSMutableArray alloc] initWithObjects:first, nil];
      */
 }
 
@@ -51,12 +47,12 @@
 - (void)insertNewObject:(id)sender
 {
     /*
-    if (!people) {
-        people = [[NSMutableArray alloc] init];
-    }
-    [people insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+     if (!people) {
+     people = [[NSMutableArray alloc] init];
+     }
+     [people insertObject:[NSDate date] atIndex:0];
+     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
      */
 }
 
@@ -108,43 +104,43 @@
     }
 }
 /*
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ [_objects removeObjectAtIndex:indexPath.row];
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
+ }
+ }
  */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([[segue identifier] isEqualToString:@"showPlayerDetails"])
     {
         BBallDetailViewController *detailViewController = [segue destinationViewController];
-             
+        
         
         detailViewController.player = [[people items] objectAtIndex:[self.tableView indexPathForSelectedRow].row];
     }
-        
+    
 }
 
 - (void)fetchEntries
@@ -165,7 +161,7 @@
     
     NSString *xmlCheck = [[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding];
     NSLog(@"xmlCheck = %@", xmlCheck);
-     
+    
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:xmlData];
     [parser setDelegate:self];
     [parser parse];
@@ -173,9 +169,9 @@
     connection = nil;
     [[self tableView] reloadData];
     NSLog(@"%@\n", people);
-      
+    
 }
-     
+
 
 -(void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error
 {
