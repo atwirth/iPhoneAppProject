@@ -16,14 +16,14 @@
 
 @property (nonatomic, weak) id parentParserDelegate;
 
-@property (weak, nonatomic) NSString *ID;
-@property (weak, nonatomic) NSString *name;
-@property (weak, nonatomic) NSString *cell;
-@property (weak, nonatomic) NSString *home;
-@property (weak, nonatomic) NSString *email;
-@property (weak, nonatomic) NSString *active;
-@property (weak, nonatomic) NSString *getTexts;
-@property (weak, nonatomic) NSString *playingNext;
+@property (nonatomic, retain) NSString *ID;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *cell;
+@property (nonatomic, retain) NSString *home;
+@property (nonatomic, retain) NSString *email;
+@property (nonatomic, retain) NSString *active;
+@property (nonatomic, retain) NSString *getTexts;
+@property (nonatomic, retain) NSString *playingNext;
 
 //-(id)initWithID:(NSString *)ID name:(NSString *)name cell:(NSString *)cell home:(NSString *)home email:(NSString *)email active:(NSString *)active getTexts:(NSString *)getTexts playingNext:(NSString *)playingNext;
 
