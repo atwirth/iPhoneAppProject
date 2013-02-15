@@ -84,6 +84,7 @@
     }
     Person *item = [[people items] objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:item.name];
+   
     
     return cell;
 }
@@ -96,7 +97,7 @@
 
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
-    NSLog(@"%@ found a %@ element", self, elementName);
+    //NSLog(@"%@ found a %@ element", self, elementName);
     if([elementName isEqual:@"people"]) {
         people = [[People alloc] init];
         [people setParentParserDelegate:self];
@@ -148,7 +149,7 @@
     xmlData = [[NSMutableData alloc] init];
     NSURL *url = [NSURL URLWithString:@"http://www.dwirth.com/westgym/wgservice.asmx/getlist"];
     NSURLRequest *req = [NSURLRequest requestWithURL:url];
-    connection = [[NSURLConnection alloc] initWithRequest:req delegate:self startImmediately:YES];
+        connection = [[NSURLConnection alloc] initWithRequest:req delegate:self startImmediately:YES];
 }
 
 - (void)connection:(NSURLConnection *)conn didReceiveData:(NSData *)data
@@ -159,8 +160,8 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)conn
 {
     
-    NSString *xmlCheck = [[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding];
-    NSLog(@"xmlCheck = %@", xmlCheck);
+    //NSString *xmlCheck = [[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding];
+    //NSLog(@"xmlCheck = %@", xmlCheck);
     
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:xmlData];
     [parser setDelegate:self];
@@ -168,7 +169,7 @@
     xmlData = nil;
     connection = nil;
     [[self tableView] reloadData];
-    NSLog(@"%@\n", people);
+    //NSLog(@"%@\n", people);
     
 }
 

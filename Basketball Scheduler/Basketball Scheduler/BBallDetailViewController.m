@@ -41,9 +41,24 @@
         self.cellLabel.text = thePlayer.cell;
         self.homeLabel.text = thePlayer.home;
         self.emailLabel.text = thePlayer.email;
-        self.activeLabel.text = thePlayer.active;
-        self.getTextsLabel.text = thePlayer.getTexts;
-        self.playingNextLabel.text = thePlayer.playingNext;
+        if ([thePlayer.active isEqual:@"Y"]) {
+            self.activeLabel.text = @"Yes";
+        }
+        else {
+            self.activeLabel.text = NULL;
+        }
+        if ([thePlayer.getTexts isEqual:@"Y"]) {
+            self.getTextsLabel.text = @"Yes";
+        }
+        else {
+            self.getTextsLabel.text = NULL;
+        }
+        if ([thePlayer.playingNext isEqual:@"I"]) {
+            self.playingNextLabel.text = @"In";
+        }
+        else {
+            self.playingNextLabel.text = NULL;
+        }
     }
 }
 
@@ -58,6 +73,11 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 @end

@@ -23,7 +23,7 @@
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
-    NSLog(@"\t%@ found a %@ element", self, elementName);
+    //NSLog(@"\t%@ found a %@ element", self, elementName);
     
     if ([elementName isEqual:@"person"]) {
         Person *entry = [[Person alloc] init];

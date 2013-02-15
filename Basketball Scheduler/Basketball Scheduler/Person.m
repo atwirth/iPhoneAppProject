@@ -34,60 +34,16 @@
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
-    NSLog(@"\t\t%@ found a %@ element", self, elementName);
+    //NSLog(@"\t\t%@ found a %@ element", self, elementName);
     element = elementName;
-    //while (!currentString) {
-    //[self parser:parser foundCharacters:currentString];
-    //}
-    /*
-     if([elementName isEqual:@"id"]) {
-     //currentString = [[NSMutableString alloc] init];
-     NSLog(@"currentString = %@", currentString);
-     [self setID:currentString];
-     }
-     else if ([elementName isEqual:@"name"]) {
-     //currentString = [[NSMutableString alloc] init];
-     NSLog(@"currentString = %@", currentString);
-     [self setName:currentString];
-     }
-     else if ([elementName isEqual:@"cell"]) {
-     //currentString = [[NSMutableString alloc] init];
-     NSLog(@"currentString = %@", currentString);
-     [self setCell:currentString];
-     }
-     else if ([elementName isEqual:@"homephone"]) {
-     //currentString = [[NSMutableString alloc] init];
-     NSLog(@"currentString = %@", currentString);
-     [self setHome:currentString];
-     }
-     else if ([elementName isEqual:@"email"]) {
-     //currentString = [[NSMutableString alloc] init];
-     NSLog(@"currentString = %@", currentString);
-     [self setEmail:currentString];
-     }
-     else if ([elementName isEqual:@"active"]) {
-     //currentString = [[NSMutableString alloc] init];
-     NSLog(@"currentString = %@", currentString);
-     [self setActive:currentString];
-     }
-     else if ([elementName isEqual:@"gettexts"]) {
-     //currentString = [[NSMutableString alloc] init];
-     NSLog(@"currentString = %@", currentString);
-     [self setGetTexts:currentString];
-     }
-     else if ([elementName isEqual:@"playingnext"]) {
-     //currentString = [[NSMutableString alloc] init];
-     NSLog(@"currentString = %@", currentString);
-     [self setPlayingNext:currentString];
-     }
-     */
+    
 }
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    NSLog(@"element = %@", element);
+    //NSLog(@"element = %@", element);
     if (![string hasPrefix:@"\n"]) {
-        NSLog(@"string = %@", string);
+        //NSLog(@"string = %@", string);
         //currentString = [[NSMutableString alloc] init];
         //[currentString appendString:string];
         
