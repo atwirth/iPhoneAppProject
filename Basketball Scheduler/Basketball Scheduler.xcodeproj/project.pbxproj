@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C80CCEE516D2941F005EB677 /* BBallWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80CCEE416D2941F005EB677 /* BBallWelcomeController.m */; };
 		C82D8F1116CAB9B000216400 /* BBallDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */; };
 		C83B86B416CE929900A04F01 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B86B316CE929900A04F01 /* People.m */; };
 		C8D95CE416CACE4B00DFCA65 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8D95CE216CACE4B00DFCA65 /* MainStoryboard.storyboard */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C80CCEE316D2941F005EB677 /* BBallWelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallWelcomeController.h; sourceTree = "<group>"; };
+		C80CCEE416D2941F005EB677 /* BBallWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallWelcomeController.m; sourceTree = "<group>"; };
 		C82D8F0F16CAB9B000216400 /* BBallDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallDetailViewController.h; sourceTree = "<group>"; };
 		C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallDetailViewController.m; sourceTree = "<group>"; };
 		C83B86B216CE929900A04F01 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				CF29419016C81E8F00E43403 /* BBallMasterViewController.h */,
 				CF29419116C81E8F00E43403 /* BBallMasterViewController.m */,
 				C8D95CE216CACE4B00DFCA65 /* MainStoryboard.storyboard */,
+				C80CCEE316D2941F005EB677 /* BBallWelcomeController.h */,
+				C80CCEE416D2941F005EB677 /* BBallWelcomeController.m */,
 				C83B86B216CE929900A04F01 /* People.h */,
 				C83B86B316CE929900A04F01 /* People.m */,
 				CF29419B16C821ED00E43403 /* Person.h */,
@@ -195,6 +200,7 @@
 				CF29419D16C821ED00E43403 /* Person.m in Sources */,
 				C82D8F1116CAB9B000216400 /* BBallDetailViewController.m in Sources */,
 				C83B86B416CE929900A04F01 /* People.m in Sources */,
+				C80CCEE516D2941F005EB677 /* BBallWelcomeController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,6 +8,7 @@
 
 #import "BBallMasterViewController.h"
 #import "BBallDetailViewController.h"
+#import "BBallWelcomeController.h"
 #import "Person.h"
 #import "People.h"
 
@@ -140,6 +141,12 @@
         
         
         detailViewController.player = [[people items] objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
+    
+    if ([[segue identifier] isEqualToString:@"signIn"])
+    {
+        BBallWelcomeController *welcomeViewController = [segue destinationViewController];
+        welcomeViewController.players = [people items];
     }
     
 }

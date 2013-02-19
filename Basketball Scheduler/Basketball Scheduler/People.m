@@ -9,6 +9,7 @@
 #import "People.h"
 #import "Person.h"
 
+
 @implementation People
 @synthesize items, parentParserDelegate;
 
@@ -43,6 +44,10 @@
     currentString = nil;
     if ([elementName isEqual:@"people"])
         [parser setDelegate:parentParserDelegate];
+}
+
+-(Person *)objectAtIndex:(NSUInteger *)index {
+    return [self.items objectAtIndex:*index];
 }
 
 @end
