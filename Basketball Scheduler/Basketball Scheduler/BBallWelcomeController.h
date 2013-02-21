@@ -9,11 +9,17 @@
 #import <UIKit/UIKit.h>
 
 @class People;
+@class Person;
 
-@interface BBallWelcomeController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate> 
+@interface BBallWelcomeController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
+     UIPickerView  *namePicker;
+}
 
+@property (strong, nonatomic) Person *person;
+@property (strong, nonatomic) IBOutlet UIPickerView *namePicker;
+@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) NSMutableArray *players;
-@property(nonatomic, readonly) NSInteger numberOfComponents;
+- (IBAction)selectButton:(UIButton *)sender;
 
 
 
