@@ -11,6 +11,7 @@
 @class People;
 @class Person;
 
+
 @interface BBallWelcomeController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
      UIPickerView  *namePicker;
 }
@@ -19,7 +20,7 @@
 @property (strong, nonatomic) IBOutlet UIPickerView *namePicker;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (strong, nonatomic) NSMutableArray *players;
-- (IBAction)selectButton:(UIButton *)sender;
+//- (IBAction)selectButton:(UIButton *)sender;
 
 
 

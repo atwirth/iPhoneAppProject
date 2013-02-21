@@ -10,9 +10,12 @@
 
 @class Person;
 
-@interface BBallActionViewController : UITableViewController
+@interface BBallActionViewController : UITableViewController{
+    NSURLConnection *connection;
+}
 
 @property (strong, nonatomic) Person *person;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+- (IBAction)inoutButton:(id)sender;
 
 @end

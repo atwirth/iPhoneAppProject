@@ -16,20 +16,21 @@
 
 @end
 
+
 @implementation BBallWelcomeController
+
+@synthesize namePicker;
 
 
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+        
+    self.person = [[Person alloc] init];
+    self.person = [self.players objectAtIndex:0];
+    self.nameLabel.text = self.person.name;
     
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -70,18 +71,20 @@
 {
     if ([[segue identifier] isEqualToString:@"actionButton"])
     {
+        //NSLog(@"person name = %@", self.person.name);
         BBallActionViewController *actionViewController = [segue destinationViewController];
         
         
         actionViewController.person = self.person;
     }
 }
-
+/*
 -(IBAction)selectButton:(UIButton *)sender
 {
-    //[self prepareForSegue:<#(UIStoryboardSegue *)#> sender:<#(id)#>]
+    
+    
 }
-
+*/
 
 
 

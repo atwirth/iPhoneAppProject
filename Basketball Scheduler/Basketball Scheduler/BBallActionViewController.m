@@ -7,10 +7,10 @@
 //
 
 #import "BBallActionViewController.h"
+#import "BBallMasterViewController.h"
 #import "Person.h"
 
 @interface BBallActionViewController ()
-- (void)configureView;
 @end
 
 @implementation BBallActionViewController
@@ -20,14 +20,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    NSLog(@"Person name = %@", self.person.name);
     self.nameLabel.text = self.person.name;
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -36,17 +31,21 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)configureView
+
+- (void)setInOut
 {
-    // Update the user interface for the detail item.
-    Person *thePerson = self.person;
     
-    if (thePerson) {
-        
-        self.nameLabel.text = thePerson.name;
-    }
+    NSURL *url = [NSURL URLWithString:@"http://www.dwirth.com/westgym/wgservice.asmx/setinout"];
+    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:url];
+    [req setValue:self.person.ID forHTTPHeaderField:@"id"];
+    [req setValue:@"O" forHTTPHeaderField:@"inout"];
+    connection = [[NSURLConnection alloc] initWithRequest:req delegate:self startImmediately:YES];
 }
 
 
-
+- (IBAction)inoutButton:(id)sender {
+    [self setInOut];
+}
 @end
+
+
