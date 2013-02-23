@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class People;
+@class Person;
 
 @interface BBallMasterViewController : UITableViewController <NSXMLParserDelegate>
 {
@@ -17,6 +18,7 @@
     
     People *people;
 }
+@property (strong, nonatomic) Person *identification;
 - (void)fetchEntries;
 
 @end

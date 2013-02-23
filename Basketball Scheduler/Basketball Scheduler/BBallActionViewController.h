@@ -16,6 +16,10 @@
 
 @property (strong, nonatomic) Person *person;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-- (IBAction)inoutButton:(id)sender;
+- (IBAction)doneAction:(UIStoryboardSegue *)segue;
+- (IBAction)inButton:(id)sender;
+- (IBAction)outButton:(id)sender;
+- (IBAction)activeButton:(id)sender;
+- (IBAction)inactiveButton:(id)sender;
 
 @end
