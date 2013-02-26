@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="11G63b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="3">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -272,13 +272,7 @@
                             <outlet property="delegate" destination="PaP-Lq-aUV" id="aYf-re-Y60"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Actions" id="6v0-ao-Ntj">
-                        <barButtonItem key="leftBarButtonItem" title="Done" id="I9K-Ew-aiw">
-                            <connections>
-                                <segue destination="12" kind="push" identifier="doneAction" id="LcU-ZR-ZqS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Actions" id="6v0-ao-Ntj"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="nameLabel" destination="AJm-vU-HKr" id="gfr-Xj-LnX"/>
@@ -540,12 +534,51 @@
             <point key="canvasLocation" x="932" y="55"/>
         </scene>
     </scenes>
+    <classes>
+        <class className="BBallActionViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBallActionViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="activeButton:"/>
+                <relationship kind="action" name="doneAction:" candidateClass="UIStoryboardSegue"/>
+                <relationship kind="action" name="inButton:"/>
+                <relationship kind="action" name="inactiveButton:"/>
+                <relationship kind="action" name="outButton:"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BBallDetailViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBallDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="IDLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="activeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="cellLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="emailLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="getTextsLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="homeLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="playingNextLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="BBallMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBallMasterViewController.h"/>
+        </class>
+        <class className="BBallWelcomeController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBallWelcomeController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="nameLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="namePicker" candidateClass="UIPickerView"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="UIStoryboardSegue" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UIStoryboardSegue.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="LcU-ZR-ZqS"/>
-    </inferredMetricsTieBreakers>
 </document>

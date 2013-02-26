@@ -28,35 +28,59 @@
 {
     [super viewDidLoad];
     
-    _identification = [[Person alloc] init];
+    
     
     
     [self fetchEntries];
+    //[self setIdentification:self.identification];
     /*
+    UIApplication *app = [UIApplication sharedApplication];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applicationDidEnterBackground:) name:UIApplicationDidEnterBackgroundNotification object:app];
+    
+    
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    // paths[0];
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:@"data.plist"];
+    
+    if ([fileManager fileExistsAtPath:plistPath] == YES)
+    {
+        
+        NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
+        NSLog(@"plist text = %@", dict);
+        Person *temp = [[Person alloc] init];
+        for (NSUInteger n = 0; n < people.items.count; n++) {
+            temp = [people objectAtIndex:&n];
+            NSLog(@"person name = %@", temp.name);
+        }
+        
+        
+    }
+    
+    
      UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(fetchEntries)];
      self.navigationItem.rightBarButtonItem = addButton;
      People *first = [[Person alloc] initWithID:@"Boss" name:@"Andrew" cell:@"319-215-6308" home:@"319-266-1270" email:@"atwirth@coe.edu" active:@"no" getTexts:@"no" playingNext:@"no"];
      people = [[NSMutableArray alloc] initWithObjects:first, nil];
      */
 }
-
+/*
+- (void)setIdentification:(Person *)identification
+{
+    
+    _identification = [[Person alloc] init];
+    _identification = [people.items objectAtIndex:0];
+    
+}
+*/
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender
-{
-    /*
-     if (!people) {
-     people = [[NSMutableArray alloc] init];
-     }
-     [people insertObject:[NSDate date] atIndex:0];
-     NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-     */
-}
+
 
 #pragma mark - Table View
 
@@ -67,6 +91,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
     return [[people items] count];
     //return people.count;
 }
@@ -104,6 +129,7 @@
         people = [[People alloc] init];
         [people setParentParserDelegate:self];
         [parser setDelegate:people];
+        //NSLog(@"people count = %u", people.items.count);
     }
 }
 /*
@@ -194,7 +220,19 @@
                                        otherButtonTitles:nil];
     [av show];
 }
-
+/*
+- (void)applicationDidEnterBackground:(NSNotification *)notification {
+    NSLog(@"Entering Background");
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    // paths[0];
+    NSString *documentsDirectory = [paths objectAtIndex:0];
+    NSString *plistPath = [documentsDirectory stringByAppendingPathComponent:@"data.plist"];
+    
+    //NSLog(@"identification name = %@", self.identification.name);
+    
+    [[NSDictionary dictionaryWithObjectsAndKeys:self.identification.name, @"text", nil] writeToFile:plistPath atomically:YES];
+}
+*/
 
 @end
 

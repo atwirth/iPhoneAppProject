@@ -30,10 +30,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)doneAction:(UIStoryboardSegue *)segue
-{
-    
-}
+
 
 
 - (void)setIn {
@@ -73,7 +70,7 @@
     NSMutableString *temp = [[NSMutableString alloc] initWithString:@"id="];
     [temp appendString:self.person.ID];
     [temp appendString:@"&yesno=YES"];
-    NSLog(@"temp = %@", temp);
+    //NSLog(@"temp = %@", temp);
     NSData *data = [temp dataUsingEncoding:NSUTF8StringEncoding];
     [req setHTTPBody:data];
     connection = [[NSURLConnection alloc] initWithRequest:req delegate:self startImmediately:YES];
@@ -88,7 +85,7 @@
     NSMutableString *temp = [[NSMutableString alloc] initWithString:@"id="];
     [temp appendString:self.person.ID];
     [temp appendString:@"&yesno=NO"];
-    NSLog(@"temp = %@", temp);
+    //NSLog(@"temp = %@", temp);
     NSData *data = [temp dataUsingEncoding:NSUTF8StringEncoding];
     [req setHTTPBody:data];
     connection = [[NSURLConnection alloc] initWithRequest:req delegate:self startImmediately:YES];
