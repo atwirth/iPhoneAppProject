@@ -134,12 +134,16 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showPlayerDetails"])
+    if ([[segue identifier] isEqualToString:@"playersList"])
     {
         BBallMasterViewController *masterViewController = [segue destinationViewController];
         
-        masterViewController.identification = self.person;
+        
+        NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:self.players];
+        masterViewController.players = tempArr;
     }
+    
+    
     
 }
 

@@ -12,14 +12,26 @@
 @class Person;
 
 
-@interface BBallWelcomeController : UITableViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
-     UIPickerView  *namePicker;
+@interface BBallWelcomeController : UITableViewController <NSXMLParserDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
+{
+    NSURLConnection *connection;
+    NSMutableData *xmlData;
+    
+    People *people;
+    
+    UIPickerView  *namePicker;
+    
 }
 
+- (void)fetchEntries;
+- (void)fetchID;
+
+
+//- (IBAction)signInButton:(id)sender;
 @property (strong, nonatomic) Person *person;
+//@property (strong, nonatomic) NSMutableArray *players;
 @property (strong, nonatomic) IBOutlet UIPickerView *namePicker;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) NSMutableArray *players;
 //- (IBAction)selectButton:(UIButton *)sender;
 
 

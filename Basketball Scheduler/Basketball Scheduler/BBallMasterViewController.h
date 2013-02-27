@@ -11,14 +11,16 @@
 @class People;
 @class Person;
 
-@interface BBallMasterViewController : UITableViewController <NSXMLParserDelegate>
+@interface BBallMasterViewController : UITableViewController 
 {
-    NSURLConnection *connection;
-    NSMutableData *xmlData;
+    //NSURLConnection *connection;
+    //NSMutableData *xmlData;
     
-    People *people;
+    
 }
-@property (strong, nonatomic) Person *identification;
-- (void)fetchEntries;
+
+@property (strong, nonatomic) NSMutableArray *players;
+@property (strong, nonatomic) Person *person;
+//- (void)fetchEntries;
 
 @end

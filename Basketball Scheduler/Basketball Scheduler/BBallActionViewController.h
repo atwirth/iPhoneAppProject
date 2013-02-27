@@ -9,12 +9,14 @@
 #import <UIKit/UIKit.h>
 
 @class Person;
+@class People;
 
 @interface BBallActionViewController : UITableViewController{
     NSURLConnection *connection;
 }
 
 @property (strong, nonatomic) Person *person;
+@property (strong, nonatomic) NSMutableArray *players;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 - (IBAction)inButton:(id)sender;
 - (IBAction)outButton:(id)sender;
