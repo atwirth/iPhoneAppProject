@@ -94,6 +94,7 @@
 
 - (IBAction)inButton:(id)sender {
     [self setIn];
+    self.person.playingNext = @"I";
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Update"
                                                  message:@"You are now IN for next event!"
                                                 delegate:nil
@@ -104,6 +105,7 @@
 
 - (IBAction)outButton:(id)sender {
     [self setOut];
+    self.person.playingNext = @"O";
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Update"
                                                  message:@"You are now OUT for next event!"
                                                 delegate:nil
@@ -114,6 +116,7 @@
 
 - (IBAction)activeButton:(id)sender {
     [self setActive];
+    self.person.playingNext = @"Y";
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Update"
                                                  message:@"You are now Active"
                                                 delegate:nil
@@ -124,6 +127,7 @@
 
 - (IBAction)inactiveButton:(id)sender {
     [self setInactive];
+    self.person.playingNext = @"N";
     UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Update"
                                                  message:@"You are now Inactive"
                                                 delegate:nil
