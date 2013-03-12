@@ -42,19 +42,22 @@
         self.homeLabel.text = thePlayer.home;
         self.emailLabel.text = thePlayer.email;
         if ([thePlayer.active isEqual:@"Y"]) {
-            self.activeLabel.text = @"Yes";
+            self.activeLabel.text = @"Active";
         }
         else {
-            self.activeLabel.text = NULL;
+            self.activeLabel.text = @"Inactive";
         }
         if ([thePlayer.getTexts isEqual:@"Y"]) {
             self.getTextsLabel.text = @"Yes";
         }
         else {
-            self.getTextsLabel.text = NULL;
+            self.getTextsLabel.text = @"No";
         }
         if ([thePlayer.playingNext isEqual:@"I"]) {
             self.playingNextLabel.text = @"In";
+        }
+        else if ([thePlayer.playingNext isEqual:@"O"]){
+            self.playingNextLabel.text = @"Out";
         }
         else {
             self.playingNextLabel.text = NULL;

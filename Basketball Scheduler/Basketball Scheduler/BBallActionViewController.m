@@ -8,7 +8,9 @@
 
 #import "BBallActionViewController.h"
 #import "BBallMasterViewController.h"
+#import "BBallWelcomeController.h"
 #import "Person.h"
+#import "People.h"
 
 @interface BBallActionViewController ()
 @end
@@ -22,12 +24,90 @@
   [super viewDidLoad];
     self.nameLabel.text = self.person.name;
     
+    
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)reloadList
+{
+    [[people items] removeAllObjects];
+    [self fetchEntries];
+}
+
+- (void)reloadPlayer
+{
+    NSEnumerator *e = [[people items] objectEnumerator];
+    Person *object;
+    while (object = [e nextObject])
+    {
+        //NSLog(@"object.name = %@", object.name);
+        if ([object.ID isEqual:self.person.ID]) {
+            self.person = object;
+            break;
+        };
+    }
+}
+
+- (void)fetchEntries
+{
+    xmlData = [[NSMutableData alloc] init];
+    NSURL *url = [NSURL URLWithString:@"http://www.dwirth.com/westgym/wgservice.asmx/getlist"];
+    NSURLRequest *req = [NSURLRequest requestWithURL:url];
+    connection = [[NSURLConnection alloc] initWithRequest:req delegate:self startImmediately:YES];
+}
+
+
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
+{
+    //NSLog(@"%@ found a %@ element", self, elementName);
+    if([elementName isEqual:@"people"]) {
+        people = [[People alloc] init];
+        [people setParentParserDelegate:self];
+        [parser setDelegate:people];
+        //NSLog(@"people count = %u", people.items.count);
+    }
+}
+
+- (void)connection:(NSURLConnection *)conn didReceiveData:(NSData *)data
+{
+    [xmlData appendData:data];
+}
+
+- (void)connectionDidFinishLoading:(NSURLConnection *)conn
+{
+    
+    //NSString *xmlCheck = [[NSString alloc] initWithData:xmlData encoding:NSUTF8StringEncoding];
+    //NSLog(@"xmlCheck = %@", xmlCheck);
+    
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:xmlData];
+    [parser setDelegate:self];
+    [parser parse];
+    xmlData = nil;
+    connection = nil;
+    //[namePicker reloadAllComponents];
+    
+    //NSLog(@"%@\n", people);
+    
+}
+
+
+-(void)connection:(NSURLConnection *)conn didFailWithError:(NSError *)error
+{
+    connection = nil;
+    xmlData = nil;
+    NSString *errorString = [NSString stringWithFormat:@"Fetch faild: %@", [error localizedDescription]];
+    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Error"
+                                                 message:errorString
+                                                delegate:nil
+                                       cancelButtonTitle:@"OK"
+                                       otherButtonTitles:nil];
+    [av show];
 }
 
 
@@ -101,6 +181,11 @@
                                        cancelButtonTitle:@"OK"
                                        otherButtonTitles:nil];
     [av show];
+    
+  
+    [self reloadList];
+    [self reloadPlayer];
+    
 }
 
 - (IBAction)outButton:(id)sender {
@@ -112,6 +197,9 @@
                                        cancelButtonTitle:@"OK"
                                        otherButtonTitles:nil];
     [av show];
+    
+    [self reloadList];
+    [self reloadPlayer];
 }
 
 - (IBAction)activeButton:(id)sender {
@@ -123,6 +211,10 @@
                                        cancelButtonTitle:@"OK"
                                        otherButtonTitles:nil];
     [av show];
+    
+    
+    [self reloadList];
+    [self reloadPlayer];
 }
 
 - (IBAction)inactiveButton:(id)sender {
@@ -134,6 +226,10 @@
                                        cancelButtonTitle:@"OK"
                                        otherButtonTitles:nil];
     [av show];
+    
+    
+    [self reloadList];
+    [self reloadPlayer];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

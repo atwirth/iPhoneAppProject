@@ -60,7 +60,7 @@
         Person *object;
         while (object = [e nextObject])
         {
-            NSLog(@"object.name = %@", object.name);
+            //NSLog(@"object.name = %@", object.name);
             if ([object.ID isEqual:temp]) {
                 self.person = object;
                 break;
@@ -133,9 +133,16 @@
         
         
         actionViewController.person = self.person;
+        //actionViewController.people = people;
         NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:[people items]];
         actionViewController.players = tempArr;
     }
+}
+
+- (void)reloadList
+{
+    [[people items] removeAllObjects];
+    [self fetchEntries];
 }
  
 - (void)fetchEntries

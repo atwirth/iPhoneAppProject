@@ -11,13 +11,22 @@
 @class Person;
 @class People;
 
-@interface BBallActionViewController : UITableViewController{
+@interface BBallActionViewController : UITableViewController <NSXMLParserDelegate>{
     NSURLConnection *connection;
+    NSMutableData *xmlData;
+    
+    People *people;
 }
 
+//@property (strong, nonatomic) People *people;
 @property (strong, nonatomic) Person *person;
 @property (strong, nonatomic) NSMutableArray *players;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+
+- (void)fetchEntries;
+- (void)reloadList;
+- (void)reloadPlayer;
+
 - (IBAction)inButton:(id)sender;
 - (IBAction)outButton:(id)sender;
 - (IBAction)activeButton:(id)sender;

@@ -25,6 +25,7 @@
 
 - (void)fetchEntries;
 - (void)fetchID;
+- (void)reloadList;
 
 
 //- (IBAction)signInButton:(id)sender;
