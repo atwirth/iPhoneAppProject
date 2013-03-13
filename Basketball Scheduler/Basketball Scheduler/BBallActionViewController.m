@@ -242,6 +242,59 @@
         NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:self.players];
         masterViewController.players = tempArr;
     }
+    if ([[segue identifier] isEqualToString:@"inList"])
+    {
+        BBallMasterViewController *masterViewController = [segue destinationViewController];
+        
+        
+        NSMutableArray *tempArr = [[NSMutableArray alloc] init];
+        NSEnumerator *e = [self.players objectEnumerator];
+        Person *object;
+        while (object = [e nextObject])
+        {
+            //NSLog(@"object.name = %@", object.name);
+            if ([object.playingNext isEqual:@"I"]) {
+                [tempArr addObject:object];
+            };
+        }
+        masterViewController.players = tempArr;
+    }
+    if ([[segue identifier] isEqualToString:@"outList"])
+    {
+        BBallMasterViewController *masterViewController = [segue destinationViewController];
+        
+        
+        NSMutableArray *tempArr = [[NSMutableArray alloc] init];
+        NSEnumerator *e = [self.players objectEnumerator];
+        Person *object;
+        while (object = [e nextObject])
+        {
+            //NSLog(@"object.name = %@", object.name);
+            if ([object.playingNext isEqual:@"O"]) {
+                [tempArr addObject:object];
+            };
+        }
+        masterViewController.players = tempArr;
+    }
+    if ([[segue identifier] isEqualToString:@"notResponded"])
+    {
+        BBallMasterViewController *masterViewController = [segue destinationViewController];
+        
+        
+        NSMutableArray *tempArr = [[NSMutableArray alloc] init];
+        NSEnumerator *e = [self.players objectEnumerator];
+        Person *object;
+        while (object = [e nextObject])
+        {
+            //NSLog(@"object.name = %@", object.name);
+            if (object.playingNext == NULL) {
+                [tempArr addObject:object];
+            };
+        }
+        masterViewController.players = tempArr;
+    }
+
+
     
     
     

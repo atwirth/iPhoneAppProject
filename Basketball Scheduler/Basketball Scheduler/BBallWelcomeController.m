@@ -27,6 +27,7 @@
     
     [self fetchEntries];
     [super viewDidLoad];
+    
    
     
     
@@ -68,8 +69,9 @@
         }
         
         self.nameLabel.text = self.person.name;
+        [namePicker setUserInteractionEnabled:NO];
         
-       
+        
         
         
     }
@@ -213,6 +215,8 @@
     [[NSDictionary dictionaryWithObject:temp forKey:@"ID"]writeToFile:plistPath atomically:YES];
 
 }
+
+
 
 
 
