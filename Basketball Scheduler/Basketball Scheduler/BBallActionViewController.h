@@ -32,4 +32,7 @@
 - (IBAction)activeButton:(id)sender;
 - (IBAction)inactiveButton:(id)sender;
 
+- (IBAction)done:(UIStoryboardSegue *)segue;
+- (IBAction)cancel:(UIStoryboardSegue *)segue;
+
 @end

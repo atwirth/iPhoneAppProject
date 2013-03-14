@@ -8,6 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AddPlayerViewController : UITableViewController
+@interface AddPlayerViewController : UITableViewController <UITextFieldDelegate>
+
+
+@property (weak, nonatomic) IBOutlet UITextField *nameInput;
+@property (weak, nonatomic) IBOutlet UITextField *cellInput;
+@property (weak, nonatomic) IBOutlet UITextField *emailInput;
+@property (weak, nonatomic) IBOutlet UITextField *homeInput;
+@property (weak, nonatomic) IBOutlet UITextField *getTextsInput;
+
+- (void)addPlayer;
 
 @end

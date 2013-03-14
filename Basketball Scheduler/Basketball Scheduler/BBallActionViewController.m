@@ -9,6 +9,7 @@
 #import "BBallActionViewController.h"
 #import "BBallMasterViewController.h"
 #import "BBallWelcomeController.h"
+#import "AddPlayerViewController.h"
 #import "Person.h"
 #import "People.h"
 
@@ -298,6 +299,24 @@
     
     
     
+}
+
+
+- (IBAction)done:(UIStoryboardSegue *)segue
+{    
+    if ([[segue identifier] isEqualToString:@"ReturnInput"]) {
+        //AddPlayerViewController *addController = [segue sourceViewController];
+               
+        [self dismissViewControllerAnimated:YES completion:NULL];
+        [self reloadList];
+    }
+}
+
+- (IBAction)cancel:(UIStoryboardSegue *)segue
+{    
+    if ([[segue identifier] isEqualToString:@"CancelInput"]) {        
+        [self dismissViewControllerAnimated:YES completion:NULL];        
+    }    
 }
 
 @end
