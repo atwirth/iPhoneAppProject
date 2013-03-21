@@ -8,11 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		C80CCEE516D2941F005EB677 /* BBallWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80CCEE416D2941F005EB677 /* BBallWelcomeController.m */; };
+		C80D79D416F2710000B90588 /* BBallListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80D79D316F2710000B90588 /* BBallListViewController.m */; };
 		C82D8F1116CAB9B000216400 /* BBallDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */; };
 		C83B86B416CE929900A04F01 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B86B316CE929900A04F01 /* People.m */; };
 		C8D95CE416CACE4B00DFCA65 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8D95CE216CACE4B00DFCA65 /* MainStoryboard.storyboard */; };
 		C8F1C60616D6964F00213A5E /* BBallActionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F1C60516D6964F00213A5E /* BBallActionViewController.m */; };
-		C8F843CD16F125FE003C0E2E /* AddPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F843CC16F125FE003C0E2E /* AddPlayerViewController.m */; };
+		C8F4610C16F8DD08000D4CD4 /* AddPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8F4610B16F8DD08000D4CD4 /* AddPlayerViewController.m */; };
 		CF29417616C81E8F00E43403 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF29417516C81E8F00E43403 /* UIKit.framework */; };
 		CF29417816C81E8F00E43403 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF29417716C81E8F00E43403 /* Foundation.framework */; };
 		CF29417A16C81E8F00E43403 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CF29417916C81E8F00E43403 /* CoreGraphics.framework */; };
@@ -29,6 +30,8 @@
 /* Begin PBXFileReference section */
 		C80CCEE316D2941F005EB677 /* BBallWelcomeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallWelcomeController.h; sourceTree = "<group>"; };
 		C80CCEE416D2941F005EB677 /* BBallWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallWelcomeController.m; sourceTree = "<group>"; };
+		C80D79D216F2710000B90588 /* BBallListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallListViewController.h; sourceTree = "<group>"; };
+		C80D79D316F2710000B90588 /* BBallListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallListViewController.m; sourceTree = "<group>"; };
 		C82D8F0F16CAB9B000216400 /* BBallDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallDetailViewController.h; sourceTree = "<group>"; };
 		C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallDetailViewController.m; sourceTree = "<group>"; };
 		C83B86B216CE929900A04F01 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
@@ -36,8 +39,8 @@
 		C8D95CE316CACE4B00DFCA65 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
 		C8F1C60416D6964F00213A5E /* BBallActionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallActionViewController.h; sourceTree = "<group>"; };
 		C8F1C60516D6964F00213A5E /* BBallActionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallActionViewController.m; sourceTree = "<group>"; };
-		C8F843CB16F125FE003C0E2E /* AddPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AddPlayerViewController.h; path = ../AddPlayerViewController.h; sourceTree = "<group>"; };
-		C8F843CC16F125FE003C0E2E /* AddPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AddPlayerViewController.m; path = ../AddPlayerViewController.m; sourceTree = "<group>"; };
+		C8F4610A16F8DD08000D4CD4 /* AddPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddPlayerViewController.h; sourceTree = "<group>"; };
+		C8F4610B16F8DD08000D4CD4 /* AddPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddPlayerViewController.m; sourceTree = "<group>"; };
 		CF29417216C81E8F00E43403 /* Basketball Scheduler.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Basketball Scheduler.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF29417516C81E8F00E43403 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CF29417716C81E8F00E43403 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,8 +104,8 @@
 		CF29417B16C81E8F00E43403 /* Basketball Scheduler */ = {
 			isa = PBXGroup;
 			children = (
-				C8F843CB16F125FE003C0E2E /* AddPlayerViewController.h */,
-				C8F843CC16F125FE003C0E2E /* AddPlayerViewController.m */,
+				C8F4610A16F8DD08000D4CD4 /* AddPlayerViewController.h */,
+				C8F4610B16F8DD08000D4CD4 /* AddPlayerViewController.m */,
 				C82D8F0F16CAB9B000216400 /* BBallDetailViewController.h */,
 				C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */,
 				CF29418416C81E8F00E43403 /* BBallAppDelegate.h */,
@@ -110,6 +113,8 @@
 				CF29419016C81E8F00E43403 /* BBallMasterViewController.h */,
 				CF29419116C81E8F00E43403 /* BBallMasterViewController.m */,
 				C8D95CE216CACE4B00DFCA65 /* MainStoryboard.storyboard */,
+				C80D79D216F2710000B90588 /* BBallListViewController.h */,
+				C80D79D316F2710000B90588 /* BBallListViewController.m */,
 				C8F1C60416D6964F00213A5E /* BBallActionViewController.h */,
 				C8F1C60516D6964F00213A5E /* BBallActionViewController.m */,
 				C80CCEE316D2941F005EB677 /* BBallWelcomeController.h */,
@@ -212,7 +217,8 @@
 				C83B86B416CE929900A04F01 /* People.m in Sources */,
 				C80CCEE516D2941F005EB677 /* BBallWelcomeController.m in Sources */,
 				C8F1C60616D6964F00213A5E /* BBallActionViewController.m in Sources */,
-				C8F843CD16F125FE003C0E2E /* AddPlayerViewController.m in Sources */,
+				C80D79D416F2710000B90588 /* BBallListViewController.m in Sources */,
+				C8F4610C16F8DD08000D4CD4 /* AddPlayerViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

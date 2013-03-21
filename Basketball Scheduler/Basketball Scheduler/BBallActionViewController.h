@@ -21,17 +21,20 @@
 //@property (strong, nonatomic) People *people;
 @property (strong, nonatomic) Person *person;
 @property (strong, nonatomic) NSMutableArray *players;
-@property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *inoutSegmented;
+
+- (IBAction)inoutAction:(id)sender;
+
 
 - (void)fetchEntries;
 - (void)reloadList;
 - (void)reloadPlayer;
-
+/*
 - (IBAction)inButton:(id)sender;
 - (IBAction)outButton:(id)sender;
 - (IBAction)activeButton:(id)sender;
 - (IBAction)inactiveButton:(id)sender;
-
+*/
 - (IBAction)done:(UIStoryboardSegue *)segue;
 - (IBAction)cancel:(UIStoryboardSegue *)segue;
 

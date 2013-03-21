@@ -27,8 +27,11 @@
 - (void)fetchID;
 - (void)reloadList;
 
+- (IBAction)doneWelcome:(UIStoryboardSegue *)segue;
+- (IBAction)cancelWelcome:(UIStoryboardSegue *)segue;
 
-//- (IBAction)signInButton:(id)sender;
+
+
 @property (strong, nonatomic) Person *person;
 //@property (strong, nonatomic) NSMutableArray *players;
 @property (strong, nonatomic) IBOutlet UIPickerView *namePicker;

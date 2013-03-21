@@ -69,7 +69,7 @@
         }
         
         self.nameLabel.text = self.person.name;
-        [namePicker setUserInteractionEnabled:NO];
+        //[namePicker setUserInteractionEnabled:NO];
         
         
         
@@ -136,8 +136,8 @@
         
         actionViewController.person = self.person;
         //actionViewController.people = people;
-        NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:[people items]];
-        actionViewController.players = tempArr;
+        //NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:[people items]];
+        //actionViewController.players = tempArr;
     }
 }
 
@@ -214,6 +214,24 @@
     NSString *temp = self.person.ID;
     [[NSDictionary dictionaryWithObject:temp forKey:@"ID"]writeToFile:plistPath atomically:YES];
 
+}
+
+- (IBAction)doneWelcome:(UIStoryboardSegue *)segue
+{
+    if ([[segue identifier] isEqualToString:@"ReturnInput"]) {
+        //AddPlayerViewController *addController = [segue sourceViewController];
+        
+        [self dismissViewControllerAnimated:YES completion:NULL];
+        [self fetchEntries];
+        [self.namePicker reloadAllComponents];
+    }
+}
+
+- (IBAction)cancelWelcome:(UIStoryboardSegue *)segue
+{
+    if ([[segue identifier] isEqualToString:@"CancelInput"]) {
+        [self dismissViewControllerAnimated:YES completion:NULL];
+    }
 }
 
 

@@ -10,6 +10,7 @@
 #import "BBallMasterViewController.h"
 #import "BBallWelcomeController.h"
 #import "AddPlayerViewController.h"
+#import "BBallListViewController.h"
 #import "Person.h"
 #import "People.h"
 
@@ -23,7 +24,15 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
-    self.nameLabel.text = self.person.name;
+    self.navigationItem.title = self.person.name;
+    [self fetchEntries];
+    
+    if ([self.person.playingNext isEqual:@"I"]) {
+        [self.inoutSegmented setSelectedSegmentIndex:0];
+    }
+    if ([self.person.playingNext isEqual:@"O"]) {
+        [self.inoutSegmented setSelectedSegmentIndex:1];
+    }
     
     
 }
@@ -54,6 +63,8 @@
     }
 }
 
+
+
 - (void)fetchEntries
 {
     xmlData = [[NSMutableData alloc] init];
@@ -72,6 +83,8 @@
         [people setParentParserDelegate:self];
         [parser setDelegate:people];
         //NSLog(@"people count = %u", people.items.count);
+        
+        
     }
 }
 
@@ -91,6 +104,8 @@
     [parser parse];
     xmlData = nil;
     connection = nil;
+    
+    self.players = [[NSMutableArray alloc] initWithArray:[people items]];
     //[namePicker reloadAllComponents];
     
     //NSLog(@"%@\n", people);
@@ -173,35 +188,25 @@
 }
 
 
-- (IBAction)inButton:(id)sender {
-    [self setIn];
-    self.person.playingNext = @"I";
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Update"
-                                                 message:@"You are now IN for next event!"
-                                                delegate:nil
-                                       cancelButtonTitle:@"OK"
-                                       otherButtonTitles:nil];
-    [av show];
-    
-  
-    [self reloadList];
-    [self reloadPlayer];
-    
+
+- (IBAction)inoutAction:(id)sender {
+    //UISegmentedControl *segment = (UISegmentedControl *)sender;
+    switch ([sender selectedSegmentIndex])
+    {
+        case 0:
+        {
+            [self setIn];
+            break;
+        }
+        case 1: 
+        {
+            [self setOut];
+            break;
+        }
+    }
 }
 
-- (IBAction)outButton:(id)sender {
-    [self setOut];
-    self.person.playingNext = @"O";
-    UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Update"
-                                                 message:@"You are now OUT for next event!"
-                                                delegate:nil
-                                       cancelButtonTitle:@"OK"
-                                       otherButtonTitles:nil];
-    [av show];
-    
-    [self reloadList];
-    [self reloadPlayer];
-}
+
 
 - (IBAction)activeButton:(id)sender {
     [self setActive];
@@ -235,6 +240,20 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    [self reloadList];
+
+    if ([[segue identifier] isEqualToString:@"test"])
+    {
+        
+        BBallListViewController *listViewController = [segue destinationViewController];
+        
+        
+        NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:self.players];
+        listViewController.list = tempArr;
+    }
+    /*
+    [self reloadList];
+    //self.players = [people items];
     if ([[segue identifier] isEqualToString:@"playersList"])
     {
         BBallMasterViewController *masterViewController = [segue destinationViewController];
@@ -294,11 +313,8 @@
         }
         masterViewController.players = tempArr;
     }
-
-
-    
-    
-    
+    */
+   
 }
 
 
@@ -317,6 +333,12 @@
     if ([[segue identifier] isEqualToString:@"CancelInput"]) {        
         [self dismissViewControllerAnimated:YES completion:NULL];        
     }    
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self reloadList];
 }
 
 @end
