@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		C80CCEE516D2941F005EB677 /* BBallWelcomeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80CCEE416D2941F005EB677 /* BBallWelcomeController.m */; };
 		C80D79D416F2710000B90588 /* BBallListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C80D79D316F2710000B90588 /* BBallListViewController.m */; };
+		C8261DC71700F0A500D9EF8E /* BBallDateLocViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8261DC61700F0A500D9EF8E /* BBallDateLocViewController.m */; };
 		C82D8F1116CAB9B000216400 /* BBallDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */; };
 		C83B86B416CE929900A04F01 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B86B316CE929900A04F01 /* People.m */; };
 		C8D95CE416CACE4B00DFCA65 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8D95CE216CACE4B00DFCA65 /* MainStoryboard.storyboard */; };
@@ -32,6 +33,8 @@
 		C80CCEE416D2941F005EB677 /* BBallWelcomeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallWelcomeController.m; sourceTree = "<group>"; };
 		C80D79D216F2710000B90588 /* BBallListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallListViewController.h; sourceTree = "<group>"; };
 		C80D79D316F2710000B90588 /* BBallListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallListViewController.m; sourceTree = "<group>"; };
+		C8261DC51700F0A500D9EF8E /* BBallDateLocViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallDateLocViewController.h; sourceTree = "<group>"; };
+		C8261DC61700F0A500D9EF8E /* BBallDateLocViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallDateLocViewController.m; sourceTree = "<group>"; };
 		C82D8F0F16CAB9B000216400 /* BBallDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallDetailViewController.h; sourceTree = "<group>"; };
 		C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallDetailViewController.m; sourceTree = "<group>"; };
 		C83B86B216CE929900A04F01 /* People.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = People.h; sourceTree = "<group>"; };
@@ -104,6 +107,8 @@
 		CF29417B16C81E8F00E43403 /* Basketball Scheduler */ = {
 			isa = PBXGroup;
 			children = (
+				C8261DC51700F0A500D9EF8E /* BBallDateLocViewController.h */,
+				C8261DC61700F0A500D9EF8E /* BBallDateLocViewController.m */,
 				C8F4610A16F8DD08000D4CD4 /* AddPlayerViewController.h */,
 				C8F4610B16F8DD08000D4CD4 /* AddPlayerViewController.m */,
 				C82D8F0F16CAB9B000216400 /* BBallDetailViewController.h */,
@@ -219,6 +224,7 @@
 				C8F1C60616D6964F00213A5E /* BBallActionViewController.m in Sources */,
 				C80D79D416F2710000B90588 /* BBallListViewController.m in Sources */,
 				C8F4610C16F8DD08000D4CD4 /* AddPlayerViewController.m in Sources */,
+				C8261DC71700F0A500D9EF8E /* BBallDateLocViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

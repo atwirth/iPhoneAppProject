@@ -200,11 +200,11 @@
                                             <segue destination="tJz-d4-2sF" kind="push" identifier="test" id="PnT-Jl-ZR7"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="9ZA-R9-3hG">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" id="9ZA-R9-3hG">
                                         <rect key="frame" x="0.0" y="88" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Enter Played" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LcK-Ge-J2t">
@@ -222,6 +222,9 @@
                                             <constraint firstItem="LcK-Ge-J2t" firstAttribute="top" secondItem="9ZA-R9-3hG" secondAttribute="top" constant="11" id="PFw-x4-N14"/>
                                             <constraint firstItem="LcK-Ge-J2t" firstAttribute="leading" secondItem="9ZA-R9-3hG" secondAttribute="leading" constant="20" type="default" id="fDF-08-v7s"/>
                                         </constraints>
+                                        <connections>
+                                            <segue destination="Yvo-cD-nPi" kind="push" identifier="enterPlayed" id="P0g-7y-Jbk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -247,6 +250,127 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gsF-AJ-pzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="79" y="60"/>
+        </scene>
+        <!--Ball Date Loc View Controller - Date & Location-->
+        <scene sceneID="XjK-hf-Oh8">
+            <objects>
+                <viewController id="Yvo-cD-nPi" customClass="BBallDateLocViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eFM-bh-v96">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="koO-6v-qT7">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="cQe-jh-ncP"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="385936542.03716803">
+                                    <!--2013-03-25 20:35:42 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <data key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</data>
+                                </timeZone>
+                            </datePicker>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="6WD-xI-1HT">
+                                <segments>
+                                    <segment title="West Gym"/>
+                                    <segment title="NU High"/>
+                                    <segment title="Hudson"/>
+                                    <segment title="Other"/>
+                                </segments>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="6WD-xI-1HT" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="302-Qz-91I"/>
+                            <constraint firstAttribute="bottom" secondItem="6WD-xI-1HT" secondAttribute="bottom" constant="141" id="8M7-6Q-yEb"/>
+                            <constraint firstItem="6WD-xI-1HT" firstAttribute="leading" secondItem="eFM-bh-v96" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="EBS-1H-FbL"/>
+                            <constraint firstItem="koO-6v-qT7" firstAttribute="leading" secondItem="eFM-bh-v96" secondAttribute="leading" type="default" id="L9s-Dh-n7c"/>
+                            <constraint firstItem="koO-6v-qT7" firstAttribute="trailing" secondItem="eFM-bh-v96" secondAttribute="trailing" type="default" id="VME-WS-4Do"/>
+                            <constraint firstItem="koO-6v-qT7" firstAttribute="top" secondItem="eFM-bh-v96" secondAttribute="top" type="default" id="tXG-Y6-umh"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Date &amp; Location" id="0Lj-Vh-EkF">
+                        <barButtonItem key="rightBarButtonItem" title="Next" id="RZb-IE-1Kb">
+                            <connections>
+                                <segue destination="Mc5-Zg-7fd" kind="push" identifier="toPlayers" id="IIX-tj-ege"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="datePicker" destination="koO-6v-qT7" id="Jgu-WX-9OV"/>
+                        <outlet property="loc1" destination="6WD-xI-1HT" id="fXm-Um-B6T"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gJ0-Uy-shC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="604" y="46"/>
+        </scene>
+        <!--Ball Master View Controller - Select Players-->
+        <scene sceneID="hPl-QB-Sz3">
+            <objects>
+                <tableViewController id="Mc5-Zg-7fd" customClass="BBallMasterViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xdI-eS-xcI">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="playerCell" textLabel="lvc-4U-AFh" style="IBUITableViewCellStyleDefault" id="JrJ-g0-amh">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvc-4U-AFh">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mc5-Zg-7fd" id="jIz-wa-Wrp"/>
+                            <outlet property="delegate" destination="Mc5-Zg-7fd" id="JjZ-wZ-OZe"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Select Players" id="u17-ul-8Lg">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="dPo-7V-aNJ">
+                            <connections>
+                                <segue destination="N9E-Za-KHI" kind="unwind" identifier="CancelInput" unwindAction="cancel:" id="JMh-jG-Ck2"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="UoH-gP-U4I">
+                            <connections>
+                                <segue destination="N9E-Za-KHI" kind="unwind" identifier="ReturnInput" unwindAction="done:" id="v8j-lS-3Ff"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HlN-jA-zNM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="N9E-Za-KHI" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="1114" y="60"/>
         </scene>
         <!--Add Player View Controller - Add New Player-->
         <scene sceneID="bvj-Eh-oeX">
@@ -313,7 +437,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" type="user" id="xeu-LH-xMw"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -346,7 +470,7 @@
                                                         <constraint firstAttribute="width" constant="211" id="H6L-rc-RXB"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -379,7 +503,7 @@
                                                         <constraint firstAttribute="width" constant="211" id="n8v-8K-9KD"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -847,7 +971,7 @@
                                                         <constraint firstAttribute="width" constant="211" id="ukc-3Z-sF9"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -880,7 +1004,7 @@
                                                         <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" type="user" id="sfF-N3-n13"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -913,7 +1037,7 @@
                                                         <constraint firstAttribute="width" constant="211" id="y3o-Pl-vW3"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -1031,6 +1155,13 @@
                 <relationship kind="outlet" name="inoutSegmented" candidateClass="UISegmentedControl"/>
             </relationships>
         </class>
+        <class className="BBallDateLocViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBallDateLocViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="datePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="loc1" candidateClass="UISegmentedControl"/>
+            </relationships>
+        </class>
         <class className="BBallDetailViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BBallDetailViewController.h"/>
             <relationships>
@@ -1057,6 +1188,9 @@
                 <relationship kind="outlet" name="outButton" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
             </relationships>
+        </class>
+        <class className="BBallMasterViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BBallMasterViewController.h"/>
         </class>
         <class className="BBallWelcomeController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BBallWelcomeController.h"/>

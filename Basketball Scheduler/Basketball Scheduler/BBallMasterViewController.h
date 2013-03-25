@@ -13,14 +13,18 @@
 
 @interface BBallMasterViewController : UITableViewController 
 {
-    //NSURLConnection *connection;
-    //NSMutableData *xmlData;
+    NSURLConnection *connection;
+    NSMutableData *xmlData;
     
     
 }
 
 @property (strong, nonatomic) NSMutableArray *players;
+@property (strong, nonatomic) NSMutableArray *played;
 @property (strong, nonatomic) Person *person;
-//- (void)fetchEntries;
+@property (strong, nonatomic) NSString *loc;
+@property (strong, nonatomic) NSString *date;
+
+- (void)enterPlayed:(Person *)person;
 
 @end
