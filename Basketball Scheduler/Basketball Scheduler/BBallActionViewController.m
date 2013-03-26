@@ -31,8 +31,14 @@
     if ([self.person.playingNext isEqual:@"I"]) {
         [self.inoutSegmented setSelectedSegmentIndex:0];
     }
-    if ([self.person.playingNext isEqual:@"O"]) {
+    else if ([self.person.playingNext isEqual:@"O"]) {
         [self.inoutSegmented setSelectedSegmentIndex:1];
+    }
+    if ([self.person.active isEqual:@"Y"]) {
+        [self.activeSegmented setSelectedSegmentIndex:0];
+    }
+    else {
+        [self.activeSegmented setSelectedSegmentIndex:1];
     }
     
     
@@ -191,7 +197,7 @@
 
 
 - (IBAction)inoutAction:(id)sender {
-    //UISegmentedControl *segment = (UISegmentedControl *)sender;
+    
     switch ([sender selectedSegmentIndex])
     {
         case 0:
@@ -205,6 +211,25 @@
             break;
         }
     }
+    [self reloadList];
+}
+
+- (IBAction)activeAction:(id)sender {
+    
+    switch ([sender selectedSegmentIndex])
+    {
+        case 0:
+        {
+            [self setActive];
+            break;
+        }
+        case 1:
+        {
+            [self setInactive];
+            break;
+        }
+    }
+    [self reloadList];
 }
 
 
@@ -244,6 +269,16 @@
     [self reloadList];
 
     if ([[segue identifier] isEqualToString:@"test"])
+    {
+        
+        BBallListViewController *listViewController = [segue destinationViewController];
+        
+        
+        NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:self.players];
+        listViewController.list = tempArr;
+    }
+    
+    if ([[segue identifier] isEqualToString:@"list"])
     {
         
         BBallListViewController *listViewController = [segue destinationViewController];

@@ -99,13 +99,11 @@
         cell.accessoryType = UITableViewCellAccessoryCheckmark;
         self.person = [self.players objectAtIndex:indexPath.row];
         [self.played addObject:self.person];
-        NSLog(@"added %@", self.person.name);
     }
     else {
         cell.accessoryType = UITableViewCellAccessoryNone;
         self.person = [self.players objectAtIndex:indexPath.row];
         [self.played removeObject:self.person];
-        NSLog(@"deleted %@", self.person.name);
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];

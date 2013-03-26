@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Person.h"
 #import "BBallDetailViewController.h"
+#import "BBallPaymentViewController.h"
 
 @interface BBallListViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 

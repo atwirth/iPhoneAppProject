@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
     self.tempList = [[NSMutableArray alloc] initWithArray:self.list];
-    NSString *temp = [[NSMutableString alloc] initWithFormat:@"%u Players", self.tempList.count];
+    NSString *temp = [[NSMutableString alloc] initWithFormat:@"Select Player"];
     self.navigationItem.title = temp;
     [self.allButton setTintColor:[UIColor blackColor]];
     self.orginalColor = self.inButton.tintColor;
@@ -107,6 +107,15 @@
         temp = [self.tempList objectAtIndex:[self.tableView indexPathForSelectedRow].row];
         
         detailViewController.player = [self.tempList objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+    }
+    if ([[segue identifier] isEqualToString:@"payment"])
+    {
+        BBallPaymentViewController *paymentViewController = [segue destinationViewController];
+        
+        Person *temp = [[Person alloc] init];
+        temp = [self.tempList objectAtIndex:[self.tableView indexPathForSelectedRow].row];
+        
+        paymentViewController.player = [self.tempList objectAtIndex:[self.tableView indexPathForSelectedRow].row];
     }
     
     

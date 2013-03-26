@@ -22,8 +22,10 @@
 @property (strong, nonatomic) Person *person;
 @property (strong, nonatomic) NSMutableArray *players;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *inoutSegmented;
+@property (weak, nonatomic) IBOutlet UISegmentedControl *activeSegmented;
 
 - (IBAction)inoutAction:(id)sender;
+- (IBAction)activeAction:(id)sender;
 
 
 - (void)fetchEntries;
