@@ -220,12 +220,24 @@
     {
         case 0:
         {
-            [self setActive];
+            [self setActive];            
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Receive Texts"
+                                                         message:@"You will now recieve all texts"
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil];
+            [av show];
             break;
         }
         case 1:
         {
             [self setInactive];
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Receive Texts"
+                                                         message:@"You will NOT recieve any texts"
+                                                        delegate:nil
+                                               cancelButtonTitle:@"OK"
+                                               otherButtonTitles:nil];
+            [av show];
             break;
         }
     }

@@ -12,6 +12,8 @@
 @interface BBallPaymentViewController : UIViewController <UIPickerViewDelegate, UIPickerViewDataSource>
 {
     UIDatePicker *datePicker;
+    NSURLConnection *connection;
+    NSMutableData *xmlData;
 }
 
 
@@ -19,11 +21,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *idLabel;
 @property (weak, nonatomic) IBOutlet UITextField *amountField;
 @property (weak, nonatomic) IBOutlet UITextField *messageField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 @property (weak, nonatomic) Person *player;
 
-- (IBAction)editDone:(id)sender;
+
 
 
 @end
