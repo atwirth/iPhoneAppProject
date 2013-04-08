@@ -24,7 +24,9 @@
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 
+@property (weak, nonatomic) NSString *password;
 @property (weak, nonatomic) Person *player;
+
 
 
 

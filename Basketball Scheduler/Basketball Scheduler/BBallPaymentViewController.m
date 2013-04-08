@@ -25,6 +25,9 @@
     self.idLabel.text = self.player.ID;
     
     
+    self.passwordField.secureTextEntry = YES;
+    self.passwordField.clearsOnBeginEditing = NO;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -45,16 +48,13 @@
 
 
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
-    [textField resignFirstResponder];
-    return YES;
-}
+
 
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    self.password = self.passwordField.text;
     NSLog(@"amount length = %u", self.amountField.text.length);
-    NSLog(@"message length = %u", self.amountField.text.length);
-    NSLog(@"password length = %u", self.amountField.text.length);
+    NSLog(@"message length = %u", self.messageField.text.length);
+    NSLog(@"password length = %u", self.passwordField.text.length);
     if ([self.amountField.text  length] < 1) {
         UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Amount is Empty"
                                                      message:@"Enter correct amount"
@@ -66,17 +66,7 @@
         
         return NO;
     }
-    else if ([self.messageField.text length] < 1) {
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Message is Empty"
-                                                     message:@"Enter month payment is for"
-                                                    delegate:nil
-                                           cancelButtonTitle:@"OK"
-                                           otherButtonTitles:nil];
-        [av show];
-        [self.messageField select:self.messageField];
-        return NO;
-    }
-    else if ([self.passwordField.text length] < 1) {
+    else if ([self.password length] < 1) {
         UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Password is empty"
                                                      message:@"Enter password"
                                                     delegate:nil
@@ -86,7 +76,7 @@
         [self.passwordField select:self.passwordField];
         return NO;
     }
-    else if ([self.passwordField.text isEqual:@"AndrewTravis"]) {
+    else if (![self.password isEqualToString:@"AndrewTravis"]) {
         UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"Password is incorrect"
                                                      message:@"Enter correct password"
                                                     delegate:nil
@@ -124,7 +114,7 @@
     [formatter setFormatterBehavior:NSDateFormatterBehavior10_4];
     [formatter setDateStyle:NSDateFormatterShortStyle];
     [formatter setTimeStyle:NSDateFormatterNoStyle];
-    NSString *result = [formatter stringFromDate:self.datePicker.date];
+    NSString *result = [formatter stringFromDate:datePicker.date];
         
     [temp appendString:result];
     [temp appendString:@"&paid_amount="];
@@ -141,6 +131,13 @@
     [req setHTTPBody:data];
     connection = ([[NSURLConnection alloc] initWithRequest:req delegate:self startImmediately:YES]);
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    [textField resignFirstResponder];
+    return YES;
+}
+
 
 
 @end

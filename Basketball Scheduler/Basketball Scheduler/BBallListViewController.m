@@ -35,7 +35,7 @@
 {
     [super viewDidLoad];
     self.tempList = [[NSMutableArray alloc] initWithArray:self.list];
-    NSString *temp = [[NSMutableString alloc] initWithFormat:@"Select Player"];
+    NSString *temp = [[NSMutableString alloc] initWithFormat:@"%u Players", self.tempList.count];
     self.navigationItem.title = temp;
     [self.allButton setTintColor:[UIColor blackColor]];
     self.orginalColor = self.inButton.tintColor;
