@@ -23,6 +23,7 @@
 @property (strong, nonatomic) NSMutableArray *players;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *inoutSegmented;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *activeSegmented;
+@property (weak, nonatomic) IBOutlet UITableViewCell *adminCell;
 
 - (IBAction)inoutAction:(id)sender;
 - (IBAction)activeAction:(id)sender;

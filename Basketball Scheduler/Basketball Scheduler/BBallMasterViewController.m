@@ -105,6 +105,8 @@
         self.person = [self.players objectAtIndex:indexPath.row];
         [self.played removeObject:self.person];
     }
+    NSString *temp = [[NSMutableString alloc] initWithFormat:@"%u Players", self.played.count];
+    self.navigationItem.title = temp;
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [tableView reloadData];

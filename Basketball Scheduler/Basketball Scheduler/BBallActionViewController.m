@@ -40,6 +40,12 @@
     else {
         [self.activeSegmented setSelectedSegmentIndex:1];
     }
+    self.navigationItem.hidesBackButton = YES;
+    
+    if (!([self.person.ID isEqualToString:@"1"] | [self.person.ID isEqualToString:@"18"]))
+    {
+        self.adminCell.hidden = YES;
+    }
     
     
 }
