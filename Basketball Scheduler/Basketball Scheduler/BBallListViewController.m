@@ -110,7 +110,7 @@
     }
     if ([[segue identifier] isEqualToString:@"payment"])
     {
-        BBallPaymentViewController *paymentViewController = [segue destinationViewController];
+        PaymentTableViewController *paymentViewController = [segue destinationViewController];
         
         Person *temp = [[Person alloc] init];
         temp = [self.tempList objectAtIndex:[self.tableView indexPathForSelectedRow].row];

@@ -26,7 +26,10 @@
 {
     
     [self fetchEntries];
+    [self fetchID];
     [super viewDidLoad];
+    
+    
     
    
     
@@ -52,9 +55,11 @@
     
     if ([fileManager fileExistsAtPath:plistPath] == YES)
     {
+        
         NSMutableDictionary *dict = [NSMutableDictionary dictionaryWithContentsOfFile:plistPath];
         
         NSString *temp = [dict objectForKey:@"ID"];
+        
         
         // Create a numerator
         NSEnumerator *e = [[people items] objectEnumerator];
@@ -70,9 +75,9 @@
         
         self.nameLabel.text = self.person.name;
         //[namePicker setUserInteractionEnabled:NO];
-        
-        
-        
+        if (self.person) {
+            [self performSegueWithIdentifier:@"actionButton" sender:self];
+        }
         
     }
 }
@@ -135,6 +140,8 @@
         
         
         actionViewController.person = self.person;
+        
+        
         //actionViewController.people = people;
         //NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:[people items]];
         //actionViewController.players = tempArr;

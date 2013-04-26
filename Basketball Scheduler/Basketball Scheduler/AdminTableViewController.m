@@ -7,6 +7,8 @@
 //
 
 #import "AdminTableViewController.h"
+#import "BBallListViewController.h"
+#import "BBallDateLocViewController.h"
 
 @interface AdminTableViewController (){
     NSURLConnection *connection;
@@ -83,4 +85,29 @@
     [req setHTTPBody:data];
     connection = [[NSURLConnection alloc] initWithRequest:req delegate:self startImmediately:YES];
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+        
+    if ([[segue identifier] isEqualToString:@"list"])
+    {
+        
+        BBallListViewController *listViewController = [segue destinationViewController];
+        
+        
+        NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:self.players];
+        listViewController.list = tempArr;
+    }
+    else if ([[segue identifier] isEqualToString:@"enterPlayed"])
+    {
+        BBallDateLocViewController *dateViewController = [segue destinationViewController];
+        
+        
+        NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:self.players];
+        dateViewController.players = tempArr;
+    }
+    
+}
+
 @end

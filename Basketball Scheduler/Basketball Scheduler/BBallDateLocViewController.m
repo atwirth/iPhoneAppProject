@@ -42,6 +42,8 @@
     return 1;
 }
 
+
+
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
     
         if ([self.loc1 selectedSegmentIndex] == -1) {
@@ -101,4 +103,31 @@
 
 
 
+
+- (IBAction)locChange:(id)sender {
+    
+    switch ([sender selectedSegmentIndex])
+    {
+        case 0:
+        {
+            [self.nextButton setEnabled:YES];
+            break;
+        }
+        case 1:
+        {
+            [self.nextButton setEnabled:YES];
+            break;
+        }
+        case 2:
+        {
+            [self.nextButton setEnabled:YES];
+            break;
+        }
+        case 3:
+        {
+            [self.nextButton setEnabled:YES];
+            break;
+        }
+    }
+}
 @end

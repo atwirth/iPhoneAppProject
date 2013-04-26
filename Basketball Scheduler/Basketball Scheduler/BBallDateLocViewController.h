@@ -17,6 +17,9 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *loc1;
 
 @property (strong, nonatomic) NSMutableArray *players;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButton;
+
+- (IBAction)locChange:(id)sender;
 
 
 @end

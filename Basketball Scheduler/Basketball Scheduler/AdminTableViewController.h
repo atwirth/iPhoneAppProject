@@ -13,6 +13,7 @@
     NSString *password;
 }
 
+@property (strong, nonatomic) NSMutableArray *players;
 - (IBAction)createDepositButton:(id)sender;
 - (void)createDeposit;
 

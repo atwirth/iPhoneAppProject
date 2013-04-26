@@ -12,6 +12,7 @@
 #import "AddPlayerViewController.h"
 #import "BBallListViewController.h"
 #import "BBallDateLocViewController.h"
+#import "AdminTableViewController.h"
 #import "Person.h"
 #import "People.h"
 
@@ -25,6 +26,7 @@
 - (void)viewDidLoad
 {
   [super viewDidLoad];
+    [self.navigationItem.backBarButtonItem setTitle:@"Log Out"];
     self.navigationItem.title = self.person.name;
     [self fetchEntries];
     
@@ -40,7 +42,7 @@
     else {
         [self.activeSegmented setSelectedSegmentIndex:1];
     }
-    self.navigationItem.hidesBackButton = YES;
+   
     
     if (!([self.person.ID isEqualToString:@"1"] | [self.person.ID isEqualToString:@"18"]))
     {
@@ -316,6 +318,13 @@
         NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:self.players];
         dateViewController.players = tempArr;
     }
+    if ([[segue identifier] isEqualToString:@"admin"])
+    {
+        AdminTableViewController *adminController = [segue destinationViewController];
+        
+        NSMutableArray *tempArr = [[NSMutableArray alloc] initWithArray:self.players];
+        adminController.players = tempArr;
+    }
 }
 
 
@@ -341,6 +350,8 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self reloadList];
 }
+
+
 
 @end
 
