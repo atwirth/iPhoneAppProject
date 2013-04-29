@@ -13,6 +13,7 @@
 		C82D8F1116CAB9B000216400 /* BBallDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C82D8F1016CAB9B000216400 /* BBallDetailViewController.m */; };
 		C83B86B416CE929900A04F01 /* People.m in Sources */ = {isa = PBXBuildFile; fileRef = C83B86B316CE929900A04F01 /* People.m */; };
 		C84342CB171756D900FBA6F9 /* AdminTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C84342CA171756D900FBA6F9 /* AdminTableViewController.m */; };
+		C8A1E806172DE3EC00ACEC6F /* BBallSignInTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A1E805172DE3EC00ACEC6F /* BBallSignInTableViewController.m */; };
 		C8D2B66E170208ED000A3DE3 /* BBallPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8D2B66D170208ED000A3DE3 /* BBallPaymentViewController.m */; };
 		C8D95CE416CACE4B00DFCA65 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8D95CE216CACE4B00DFCA65 /* MainStoryboard.storyboard */; };
 		C8EB378A1729989C000D6757 /* PaymentTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C8EB37891729989C000D6757 /* PaymentTableViewController.m */; };
@@ -44,6 +45,8 @@
 		C83B86B316CE929900A04F01 /* People.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = People.m; sourceTree = "<group>"; };
 		C84342C9171756D900FBA6F9 /* AdminTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AdminTableViewController.h; sourceTree = "<group>"; };
 		C84342CA171756D900FBA6F9 /* AdminTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AdminTableViewController.m; sourceTree = "<group>"; };
+		C8A1E804172DE3EC00ACEC6F /* BBallSignInTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallSignInTableViewController.h; sourceTree = "<group>"; };
+		C8A1E805172DE3EC00ACEC6F /* BBallSignInTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallSignInTableViewController.m; sourceTree = "<group>"; };
 		C8D2B66C170208ED000A3DE3 /* BBallPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBallPaymentViewController.h; sourceTree = "<group>"; };
 		C8D2B66D170208ED000A3DE3 /* BBallPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBallPaymentViewController.m; sourceTree = "<group>"; };
 		C8D95CE316CACE4B00DFCA65 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				CF29419016C81E8F00E43403 /* BBallMasterViewController.h */,
 				CF29419116C81E8F00E43403 /* BBallMasterViewController.m */,
 				C8D95CE216CACE4B00DFCA65 /* MainStoryboard.storyboard */,
+				C8A1E804172DE3EC00ACEC6F /* BBallSignInTableViewController.h */,
+				C8A1E805172DE3EC00ACEC6F /* BBallSignInTableViewController.m */,
 				C8EB37881729989C000D6757 /* PaymentTableViewController.h */,
 				C8EB37891729989C000D6757 /* PaymentTableViewController.m */,
 				C84342C9171756D900FBA6F9 /* AdminTableViewController.h */,
@@ -243,6 +248,7 @@
 				C8D2B66E170208ED000A3DE3 /* BBallPaymentViewController.m in Sources */,
 				C84342CB171756D900FBA6F9 /* AdminTableViewController.m in Sources */,
 				C8EB378A1729989C000D6757 /* PaymentTableViewController.m in Sources */,
+				C8A1E806172DE3EC00ACEC6F /* BBallSignInTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
